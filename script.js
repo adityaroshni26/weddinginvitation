@@ -1,29 +1,3 @@
-function openInvite(){
-
-document.getElementById("intro").style.display="none";
-
-document.getElementById("site").style.display="block";
-
-document.getElementById("music").play();
-
-}
-
-const faders = document.querySelectorAll(".fade");
-
-const observer = new IntersectionObserver(entries => {
-
-entries.forEach(entry => {
-
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-}
-
-});
-
-});
-
-faders.forEach(el => observer.observe(el));
-
 const weddingDate = new Date("April 19, 2026 11:30:00").getTime();
 
 setInterval(function(){
