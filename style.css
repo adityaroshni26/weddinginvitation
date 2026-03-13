@@ -1,0 +1,146 @@
+body{
+
+margin:0;
+background:#f6efe4;
+font-family:'Cormorant Garamond', serif;
+color:#3b2f2f;
+text-align:center;
+
+}
+
+.container{
+
+max-width:420px;
+margin:auto;
+padding:30px 20px;
+
+}
+
+.hero h1{
+
+font-family:'Playfair Display', serif;
+font-size:42px;
+
+}
+
+.tagline{
+
+font-size:18px;
+margin-bottom:10px;
+
+}
+
+.date{
+
+font-size:16px;
+letter-spacing:1px;
+
+}
+
+.invitation img{
+
+width:100%;
+border:2px solid #c7a35f;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
+}
+
+.timeline{
+
+margin-top:50px;
+
+}
+
+.event{
+
+margin-bottom:30px;
+
+}
+
+button{
+
+padding:12px 20px;
+background:#c7a35f;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
+
+}
+
+button:hover{
+
+background:#b39252;
+
+}
+
+.divider{
+
+width:120px;
+height:2px;
+background:#c7a35f;
+margin:20px auto;
+
+}
+
+/* floating mandalas */
+
+.mandala{
+
+position:fixed;
+width:300px;
+height:300px;
+background-image:url("https://www.transparenttextures.com/patterns/arabesque.png");
+opacity:0.08;
+pointer-events:none;
+
+}
+
+.mandala1{
+
+top:-50px;
+left:-50px;
+animation:rotate1 30s linear infinite;
+
+}
+
+.mandala2{
+
+bottom:-50px;
+right:-50px;
+animation:rotate2 35s linear infinite;
+
+}
+
+@keyframes rotate1{
+
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+
+}
+
+@keyframes rotate2{
+
+0%{transform:rotate(360deg);}
+100%{transform:rotate(0deg);}
+
+}
+
+/* fade animations */
+
+.fade{
+
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+
+}
+
+.fade.visible{
+
+opacity:1;
+transform:translateY(0);
+
+}
