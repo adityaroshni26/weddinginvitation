@@ -1,91 +1,117 @@
 body{
-
 margin:0;
 background:radial-gradient(circle at top,#fdf6ed,#f6efe4);
 font-family:'Cormorant Garamond', serif;
 color:#3b2f2f;
 text-align:center;
-
 }
 
-body::before{
+#site{
+display:none;
+}
 
-content:"";
+/* intro screen */
+
+#intro{
 position:fixed;
 width:100%;
 height:100%;
-background-image:url("https://www.transparenttextures.com/patterns/arabesque.png");
-opacity:0.05;
-z-index:-2;
-
+background:#f6efe4;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:10;
 }
 
-.container{
+.intro-content h1{
+font-family:'Playfair Display', serif;
+font-size:40px;
+}
 
+.intro-content button{
+margin-top:20px;
+padding:12px 20px;
+background:#c7a35f;
+border:none;
+color:white;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+
+/* container */
+
+.container{
 max-width:420px;
 margin:auto;
 padding:30px 20px;
+}
 
+/* hero */
+
+.hero{
+position:relative;
 }
 
 .hero h1{
-
 font-family:'Playfair Display', serif;
 font-size:42px;
-
+color:#7a5a1f;
+text-shadow:0 0 10px rgba(199,163,95,0.3);
 }
 
 .tagline{
-
 font-size:18px;
-
 }
 
 .date{
-
 font-size:16px;
 letter-spacing:1px;
-
 }
 
 #countdown{
-
 font-size:20px;
 margin:15px 0;
 font-weight:bold;
-
 }
 
-.music-btn{
+/* gold divider */
 
-margin-top:15px;
+.divider{
+width:120px;
+height:2px;
+background:#c7a35f;
+margin:25px auto;
+}
+
+/* music button */
+
+.music-btn{
+margin-top:10px;
 padding:10px 18px;
 background:#c7a35f;
 border:none;
 color:white;
 border-radius:20px;
-font-size:14px;
 cursor:pointer;
-
 }
 
+/* story images */
+
 .story-section{
-
 margin-bottom:60px;
-
 }
 
 .story-section img{
-
 width:100%;
 border-radius:10px;
 border:2px solid #c7a35f;
 box-shadow:0 10px 30px rgba(0,0,0,0.15);
-
 }
 
-button{
+/* buttons */
 
+button{
 padding:12px 20px;
 background:#c7a35f;
 border:none;
@@ -93,71 +119,65 @@ color:white;
 border-radius:8px;
 cursor:pointer;
 margin-top:10px;
-
 }
 
-button:hover{
-
-background:#b39252;
-
-}
-
-.divider{
-
-width:120px;
-height:2px;
-background:#c7a35f;
-margin:25px auto;
-
-}
-
-/* floating mandalas */
+/* mandalas */
 
 .mandala{
-
 position:fixed;
 width:300px;
 height:300px;
 background-image:url("https://www.transparenttextures.com/patterns/arabesque.png");
 opacity:0.08;
 pointer-events:none;
-
 }
 
 .mandala1{
-
 top:-50px;
 left:-50px;
 animation:rotate1 30s linear infinite;
-
 }
 
 .mandala2{
-
 bottom:-50px;
 right:-50px;
 animation:rotate2 35s linear infinite;
-
 }
 
 @keyframes rotate1{
-
 0%{transform:rotate(0deg);}
 100%{transform:rotate(360deg);}
-
 }
 
 @keyframes rotate2{
-
 0%{transform:rotate(360deg);}
 100%{transform:rotate(0deg);}
+}
 
+/* hero mandala */
+
+.hero-mandala{
+position:absolute;
+top:-40px;
+left:50%;
+transform:translateX(-50%);
+width:220px;
+height:220px;
+background-image:url("https://www.transparenttextures.com/patterns/arabesque.png");
+opacity:0.15;
+border-radius:50%;
+animation:heroRotate 40s linear infinite;
+z-index:-1;
+}
+
+@keyframes heroRotate{
+0%{transform:translateX(-50%) rotate(0deg);}
+100%{transform:translateX(-50%) rotate(360deg);}
 }
 
 /* falling petals */
 
 .petals{
-
 position:fixed;
 top:0;
 left:0;
@@ -168,29 +188,22 @@ background-image:url("https://pngimg.com/uploads/rose_petals/rose_petals_PNG6.pn
 background-size:40px;
 opacity:0.15;
 animation:fall 25s linear infinite;
-
 }
 
 @keyframes fall{
-
 0%{background-position:0 -100%;}
 100%{background-position:0 100%;}
-
 }
 
 /* fade animation */
 
 .fade{
-
 opacity:0;
 transform:translateY(30px);
 transition:1s;
-
 }
 
 .fade.visible{
-
 opacity:1;
 transform:translateY(0);
-
 }
