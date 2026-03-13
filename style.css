@@ -16,7 +16,7 @@ text-align:center;
 display:none;
 }
 
-/* invitation landing */
+/* intro card */
 
 #intro{
 
@@ -34,13 +34,9 @@ justify-content:center;
 .invite-card{
 
 background:white;
-
 padding:40px;
-
 border-radius:12px;
-
 border:2px solid #c7a35f;
-
 box-shadow:0 10px 30px rgba(0,0,0,0.15);
 
 }
@@ -54,40 +50,27 @@ font-family:'Playfair Display', serif;
 .invite-card button{
 
 margin-top:20px;
-
 padding:12px 25px;
-
 background:#c7a35f;
-
 border:none;
-
 color:white;
-
 border-radius:30px;
-
 cursor:pointer;
 
 }
 
-/* floral vines */
+/* vines */
 
 .vines-left,
 .vines-right{
 
 position:fixed;
-
 top:0;
-
 width:120px;
-
 height:100%;
-
 background-size:contain;
-
 background-repeat:no-repeat;
-
 opacity:0.5;
-
 pointer-events:none;
 
 }
@@ -95,7 +78,6 @@ pointer-events:none;
 .vines-left{
 
 left:0;
-
 background-image:url("https://pngimg.com/uploads/vine/vine_PNG25.png");
 
 }
@@ -103,9 +85,7 @@ background-image:url("https://pngimg.com/uploads/vine/vine_PNG25.png");
 .vines-right{
 
 right:0;
-
 background-image:url("https://pngimg.com/uploads/vine/vine_PNG25.png");
-
 transform:scaleX(-1);
 
 }
@@ -115,21 +95,13 @@ transform:scaleX(-1);
 .petals{
 
 position:fixed;
-
 top:0;
-
 left:0;
-
 width:100%;
-
 height:100%;
-
 background-image:url("https://pngimg.com/uploads/rose_petals/rose_petals_PNG6.png");
-
 background-size:40px;
-
 opacity:0.08;
-
 pointer-events:none;
 
 }
@@ -139,9 +111,7 @@ pointer-events:none;
 .container{
 
 max-width:480px;
-
 margin:auto;
-
 padding:35px 22px;
 
 }
@@ -149,17 +119,14 @@ padding:35px 22px;
 /* hero */
 
 .hero{
-
-text-align:center;
-margin-bottom:20px;
-
+padding:10px 18px;
 }
 
 .hero h1{
 
 font-family:'Playfair Display', serif;
 font-size:42px;
-margin-bottom:10px;
+margin-bottom:12px;
 
 }
 
@@ -168,64 +135,46 @@ margin-bottom:10px;
 font-size:18px;
 line-height:1.6;
 max-width:340px;
-margin:0 auto 15px auto;
+margin:0 auto 18px auto;
 
 }
-
-/* date */
 
 .wedding-date{
 
 font-size:20px;
 font-weight:bold;
-margin-bottom:2px;
+margin-top:6px;
 
 }
-
-/* location */
 
 .location{
 
 font-size:17px;
-margin-bottom:15px;
 color:#555;
+margin-top:4px;
+margin-bottom:6px;
 
 }
-
-/* countdown highlight */
 
 .countdown-box{
 
-display:inline-block;
-
-padding:8px 18px;
-
-border-radius:20px;
-
-border:2px solid #c7a35f;
-
-font-weight:bold;
-
-font-size:16px;
-
-background:#fffaf0;
+font-size:20px;
+font-weight:600;
+margin-top:6px;
+color:#2d2520;
 
 }
 
-/* story sections */
+/* invitation cards */
 
 .story-section{
-
 margin:45px 0;
-
 }
 
 .story-section img{
 
 width:100%;
-
 border-radius:14px;
-
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
 
 }
@@ -235,131 +184,50 @@ box-shadow:0 10px 25px rgba(0,0,0,0.15);
 .story-section h2{
 
 font-family:'Playfair Display', serif;
-
 font-size:28px;
-
 margin-bottom:10px;
 
 }
 
-/* cover */
+/* borders */
 
-.cover img{
+.cover img{border:3px solid #d6b25e;}
 
-border:3px solid #d6b25e;
+.engagement img{border:3px solid #7a1f2b;}
+.engagement h2{color:#7a1f2b;}
 
-}
+.haldi img{border:3px solid #d4a017;}
+.haldi h2{color:#d4a017;}
 
-/* engagement */
+.sangeet img{border:3px solid #3c3f8f;}
+.sangeet h2{color:#3c3f8f;}
 
-.engagement img{
-
-border:3px solid #7a1f2b;
-
-}
-
-.engagement h2{
-
-color:#7a1f2b;
-
-}
-
-/* haldi */
-
-.haldi img{
-
-border:3px solid #d4a017;
-
-}
-
-.haldi h2{
-
-color:#d4a017;
-
-}
-
-/* sangeet */
-
-.sangeet img{
-
-border:3px solid #3c3f8f;
-
-}
-
-.sangeet h2{
-
-color:#3c3f8f;
-
-}
-
-/* wedding */
-
-.wedding img{
-
-border:3px solid #c4412d;
-
-}
-
-.wedding h2{
-
-color:#c4412d;
-
-}
+.wedding img{border:3px solid #c4412d;}
+.wedding h2{color:#c4412d;}
 
 /* buttons */
 
 button{
 
 padding:12px 22px;
-
 border:none;
-
 color:white;
-
 border-radius:30px;
-
 cursor:pointer;
-
 font-size:14px;
-
 margin-top:10px;
 
 }
 
-/* colored buttons */
-
-.engagement-btn{
-
-background:#7a1f2b;
-
-}
-
-.haldi-btn{
-
-background:#d4a017;
-
-}
-
-.sangeet-btn{
-
-background:#3c3f8f;
-
-}
-
-.wedding-btn{
-
-background:#c4412d;
-
-}
+.engagement-btn{background:#7a1f2b;}
+.haldi-btn{background:#d4a017;}
+.sangeet-btn{background:#3c3f8f;}
+.wedding-btn{background:#c4412d;}
 
 button:hover{
-
 opacity:0.9;
-
 }
 
 footer{
-
 margin:40px 0;
-
 }
