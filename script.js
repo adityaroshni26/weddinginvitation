@@ -1,10 +1,14 @@
 function openInvite(){
 
+document.querySelector(".envelope").classList.add("open");
+
+setTimeout(()=>{
+
 document.getElementById("intro").style.display="none";
-
 document.getElementById("site").style.display="block";
-
 document.getElementById("music").play();
+
+},1000);
 
 }
 
