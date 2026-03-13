@@ -15,12 +15,19 @@ days + " days to go";
 
 const music = document.getElementById("music");
 
+window.addEventListener("load", () => {
+
+music.play().catch(() => {
+console.log("Autoplay blocked by browser");
+});
+
+});
+
 function toggleMusic(){
 
 if(music.paused){
 music.play();
-}
-else{
+}else{
 music.pause();
 }
 
