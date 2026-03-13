@@ -6,7 +6,9 @@ color:#3b2f2f;
 text-align:center;
 }
 
-/* gold border frame */
+#site{
+display:none;
+}
 
 body:after{
 content:"";
@@ -19,70 +21,32 @@ border:2px solid #c7a35f;
 pointer-events:none;
 }
 
-/* intro screen */
-
 #intro{
 position:fixed;
 width:100%;
 height:100%;
-background:#f6efe4;
+background:#f5efe6;
 display:flex;
 justify-content:center;
 align-items:center;
 z-index:10;
 }
 
-/* envelope */
-
-.envelope{
-position:relative;
-width:300px;
-height:200px;
-background:#e9d9c3;
-border-radius:6px;
-overflow:hidden;
-box-shadow:0 20px 40px rgba(0,0,0,0.2);
-}
-
-.flap{
-position:absolute;
-width:100%;
-height:100%;
-background:#d7c2a5;
-transform-origin:top;
-transition:1s;
-}
-
-.envelope.open .flap{
-transform:rotateX(180deg);
-}
-
-.letter{
-position:absolute;
-width:100%;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:20px;
-}
-
-.letter h1{
+.intro-content h1{
 font-family:'Playfair Display', serif;
+font-size:40px;
 }
 
-.letter button{
-margin-top:15px;
-padding:10px 20px;
+.intro-content button{
+margin-top:20px;
+padding:12px 20px;
 background:#c7a35f;
 border:none;
 color:white;
-border-radius:6px;
+border-radius:8px;
+font-size:16px;
 cursor:pointer;
 }
-
-/* vines */
 
 .vines-left,
 .vines-right{
@@ -114,7 +78,28 @@ animation:vineMove 14s ease-in-out infinite alternate;
 100%{transform:translateY(40px);}
 }
 
-/* petals */
+.container{
+max-width:420px;
+margin:auto;
+padding:30px 20px;
+}
+
+.hero h1{
+font-family:'Playfair Display', serif;
+font-size:42px;
+color:#7a5a1f;
+}
+
+.story-section{
+margin-bottom:60px;
+}
+
+.story-section img{
+width:100%;
+border-radius:10px;
+border:2px solid #c7a35f;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
 
 .petals{
 position:fixed;
@@ -134,45 +119,12 @@ pointer-events:none;
 100%{background-position:0 100%;}
 }
 
-/* container */
-
-.container{
-max-width:420px;
-margin:auto;
-padding:30px 20px;
-}
-
-/* hero */
-
-.hero h1{
-font-family:'Playfair Display', serif;
-font-size:42px;
-color:#7a5a1f;
-}
-
-/* story */
-
-.story-section{
-margin-bottom:60px;
-}
-
-.story-section img{
-width:100%;
-border-radius:10px;
-border:2px solid #c7a35f;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
-
-/* divider */
-
 .divider{
 width:120px;
 height:2px;
 background:#c7a35f;
 margin:25px auto;
 }
-
-/* buttons */
 
 button{
 padding:12px 20px;
@@ -182,8 +134,6 @@ color:white;
 border-radius:8px;
 cursor:pointer;
 }
-
-/* fade animation */
 
 .fade{
 opacity:0;
