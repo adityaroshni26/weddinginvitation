@@ -1,3 +1,12 @@
+function openInvite(){
+
+document.getElementById("intro").style.display="none";
+document.getElementById("site").style.display="block";
+
+document.getElementById("music").play();
+
+}
+
 const weddingDate = new Date("April 19, 2026 11:30:00").getTime();
 
 setInterval(function(){
@@ -12,23 +21,3 @@ document.getElementById("countdown").innerHTML =
 days + " days to go";
 
 },1000);
-
-const music = document.getElementById("music");
-
-window.addEventListener("load", () => {
-
-music.play().catch(() => {
-console.log("Autoplay blocked by browser");
-});
-
-});
-
-function toggleMusic(){
-
-if(music.paused){
-music.play();
-}else{
-music.pause();
-}
-
-}
