@@ -26,7 +26,6 @@ font-size:42px;
 .tagline{
 
 font-size:18px;
-margin-bottom:10px;
 
 }
 
@@ -37,24 +36,26 @@ letter-spacing:1px;
 
 }
 
-.invitation img{
+#countdown{
+
+font-size:20px;
+margin:15px 0;
+font-weight:bold;
+
+}
+
+.story-section{
+
+margin-bottom:60px;
+
+}
+
+.story-section img{
 
 width:100%;
-border:2px solid #c7a35f;
 border-radius:10px;
+border:2px solid #c7a35f;
 box-shadow:0 10px 30px rgba(0,0,0,0.15);
-
-}
-
-.timeline{
-
-margin-top:50px;
-
-}
-
-.event{
-
-margin-bottom:30px;
 
 }
 
@@ -81,11 +82,9 @@ background:#b39252;
 width:120px;
 height:2px;
 background:#c7a35f;
-margin:20px auto;
+margin:25px auto;
 
 }
-
-/* floating mandalas */
 
 .mandala{
 
@@ -127,8 +126,6 @@ animation:rotate2 35s linear infinite;
 100%{transform:rotate(0deg);}
 
 }
-
-/* fade animations */
 
 .fade{
 
