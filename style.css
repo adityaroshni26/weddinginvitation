@@ -59,20 +59,24 @@ z-index:-2;
 
 }
 
-.invite-card{
+.invite-card {
 
-background:rgba(255,255,255,0.92);
+background: rgba(255, 255, 255, 0.75);
 
-padding:40px;
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
 
-border-radius:12px;
+padding: 40px;
 
-border:2px solid #c7a35f;
+border-radius: 14px;
 
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+border: 2px solid #c7a35f;
 
-max-width:420px;
+box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 
+max-width: 420px;
+
+  
 }
 
 .invite-card{
@@ -257,15 +261,33 @@ margin-bottom:10px;
 
 /* buttons */
 
-button{
+button {
 
-padding:12px 22px;
-border:none;
-color:white;
-border-radius:30px;
-cursor:pointer;
-font-size:14px;
-margin-top:10px;
+background: #c7a35f;
+
+color: white;
+
+border: none;
+
+padding: 14px 28px;
+
+font-size: 16px;
+
+border-radius: 28px;
+
+cursor: pointer;
+
+box-shadow: 0 6px 18px rgba(199,163,95,0.45);
+
+transition: all 0.25s ease;
+
+}
+
+button:hover {
+
+transform: translateY(-2px);
+
+box-shadow: 0 10px 24px rgba(199,163,95,0.55);
 
 }
 
