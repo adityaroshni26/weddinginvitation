@@ -7,7 +7,7 @@ document.getElementById("music").play();
 
 }
 
-const weddingDate = new Date("April 19, 2026");
+const weddingDate = new Date("March 20, 2026");
 
 function updateCountdown(){
 
