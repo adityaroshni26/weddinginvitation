@@ -7,16 +7,46 @@ document.getElementById("music").play();
 
 }
 
-const weddingDate = new Date("April 19, 2026 11:30:00").getTime();
+const weddingDate = new Date("April 19, 2026");
 
-setInterval(function(){
+function updateCountdown(){
 
-const now = new Date().getTime();
-const distance = weddingDate - now;
+const today = new Date();
 
-const days = Math.floor(distance/(1000*60*60*24));
+today.setHours(0,0,0,0);
 
-document.getElementById("countdown").innerHTML =
-days + " days to go";
+const difference = weddingDate - today;
 
-},1000);
+const days = Math.ceil(difference / (1000 * 60 * 60 * 24));
+
+const countdownElement = document.getElementById("countdown");
+
+if(days > 1){
+
+countdownElement.innerHTML = days + " days to go";
+
+}
+
+else if(days === 1){
+
+countdownElement.innerHTML = "1 day to go";
+
+}
+
+else if(days === 0){
+
+countdownElement.innerHTML = "The celebrations begin today ✨";
+
+}
+
+else{
+
+countdownElement.innerHTML = "Thank you for celebrating with us ❤️";
+
+}
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000 * 60 * 60);
