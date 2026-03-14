@@ -1,176 +1,130 @@
 body{
-
 margin:0;
 font-family:'Cormorant Garamond', serif;
 background:#f5f1ea;
 color:#3b2e2a;
-
 }
 
+/* landing */
 
 #intro{
-
 position:fixed;
 width:100%;
 height:100%;
 display:flex;
 align-items:center;
 justify-content:center;
-
+overflow:hidden;
 }
 
-
 #bg-video{
-
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
 object-fit:cover;
 z-index:-1;
-
 }
-
 
 .invite-card{
-
 background:rgba(255,255,255,0.75);
 backdrop-filter:blur(10px);
-
 padding:40px;
-
 border-radius:14px;
-
 border:2px solid #c7a35f;
-
 text-align:center;
-
 max-width:420px;
-
 box-shadow:0 10px 30px rgba(0,0,0,0.25);
-
 }
 
+/* main */
 
-button{
-
-background:#c7a35f;
-color:white;
-border:none;
-padding:14px 28px;
-border-radius:28px;
-cursor:pointer;
-
+#site{
+display:none;
 }
-
 
 .container{
-
-max-width:900px;
+max-width:760px;
 margin:auto;
-
+padding:40px 20px;
 }
-
 
 .story-section{
-
 text-align:center;
-margin:50px auto;
-
+margin:40px auto;
 }
-
 
 .story-section img{
-
+max-width:650px;
+width:100%;
+border-radius:14px;
 display:block;
-margin:0 auto;
-max-width:92%;
-
+margin:auto;
 }
 
+/* buttons */
+
+button{
+border:none;
+padding:12px 26px;
+border-radius:30px;
+color:white;
+cursor:pointer;
+margin-top:12px;
+}
+
+.btn-haldi{background:#c6a53a;}
+.btn-sangeet{background:#6b5da9;}
+.btn-wedding{background:#c4412d;}
+
+/* travel */
 
 .travel{
-
-margin-top:80px;
-
-}
-
-
-.travel h2{
-
 text-align:center;
-margin-bottom:40px;
-
+margin-top:70px;
 }
 
-
-.travel-grid{
-
-display:grid;
-grid-template-columns:1fr 2fr;
-gap:30px 40px;
-max-width:900px;
-margin:auto;
-
-}
-
-
-.travel-left{
-
-font-size:22px;
-color:#b46b2c;
-
-}
-
-
-.travel-right{
-
-line-height:1.6;
-
-}
-
-
-.travel-right ul{
-
-padding-left:20px;
-
-}
-
-
-.travel-right a{
-
-color:#6b7d2e;
+.travel a{
+color:#5a7b2c;
 text-decoration:none;
-
 }
 
-
-.travel-right a:hover{
-
-text-decoration:underline;
-
-}
-
+/* rsvp */
 
 .rsvp{
-
-margin-top:80px;
+margin-top:70px;
 text-align:center;
-
 }
-
 
 .rsvp-note{
-
-margin-bottom:25px;
-
+margin-bottom:20px;
 }
 
+/* qa */
+
+.qa{
+margin-top:80px;
+}
+
+.qa h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+.qa-intro{
+text-align:center;
+margin-bottom:30px;
+}
+
+.qa-item{
+margin-bottom:28px;
+}
+
+.qa-item h3{
+font-family:'Playfair Display';
+color:#b46b2c;
+}
 
 footer{
-
 text-align:center;
 margin:60px 0;
-
 }
