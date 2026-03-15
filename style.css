@@ -72,6 +72,7 @@ margin:auto;
 padding:30px 18px;
 }
 
+
 /* invitation images */
 
 .story-section{
@@ -83,10 +84,27 @@ margin:40px auto;
 width:100%;
 max-width:620px;
 height:auto;
-border:3px solid #c7a35f;
 border-radius:16px;
 display:block;
 margin:auto;
+}
+
+/* EVENT BORDER COLORS */
+
+.cover img{
+border:3px solid #7C0A2B;
+}
+
+.haldi img{
+border:3px solid #c6a53a;
+}
+
+.sangeet img{
+border:3px solid #790C94;
+}
+
+.wedding img{
+border:3px solid #c4412d;
 }
 
 /* buttons */
