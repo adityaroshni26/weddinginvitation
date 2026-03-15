@@ -10,7 +10,7 @@ color:#3b2e2a;
 #intro{
 position:fixed;
 width:100%;
-height:100%;
+height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -25,28 +25,54 @@ object-fit:cover;
 z-index:-1;
 }
 
+/* invite card */
+
 .invite-card{
 background:rgba(255,255,255,0.75);
 backdrop-filter:blur(10px);
 padding:40px;
-border-radius:14px;
+border-radius:16px;
 border:2px solid #c7a35f;
 text-align:center;
 max-width:420px;
 box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* main */
+.date{
+font-size:20px;
+font-weight:bold;
+}
+
+#countdown{
+font-size:22px;
+font-weight:bold;
+color:black;
+}
+
+/* open button */
+
+.open-btn{
+background:#f1c232;
+color:black;
+border:none;
+padding:12px 26px;
+border-radius:28px;
+cursor:pointer;
+}
+
+/* main site */
 
 #site{
 display:none;
 }
 
 .container{
-max-width:760px;
+max-width:720px;
 margin:auto;
-padding:40px 20px;
+padding:30px 18px;
 }
+
+/* invitation images */
 
 .story-section{
 text-align:center;
@@ -54,9 +80,11 @@ margin:40px auto;
 }
 
 .story-section img{
-max-width:650px;
 width:100%;
-border-radius:14px;
+max-width:620px;
+height:auto;
+border:3px solid #c7a35f;
+border-radius:16px;
 display:block;
 margin:auto;
 }
@@ -65,63 +93,36 @@ margin:auto;
 
 button{
 border:none;
-padding:12px 26px;
-border-radius:30px;
+padding:10px 22px;
+border-radius:26px;
 color:white;
 cursor:pointer;
 margin-top:12px;
 }
 
-.btn-haldi{background:#c6a53a;}
-.btn-sangeet{background:#6b5da9;}
-.btn-wedding{background:#c4412d;}
-
-/* travel */
-
-.travel{
-text-align:center;
-margin-top:70px;
+.btn-haldi{
+background:#c6a53a;
 }
 
-.travel a{
-color:#5a7b2c;
-text-decoration:none;
+.btn-sangeet{
+background:#6b5da9;
 }
 
-/* rsvp */
-
-.rsvp{
-margin-top:70px;
-text-align:center;
+.btn-wedding{
+background:#c4412d;
 }
 
-.rsvp-note{
-margin-bottom:20px;
-}
+/* sections */
 
-/* qa */
-
+.travel,
+.rsvp,
 .qa{
-margin-top:80px;
-}
-
-.qa h2{
+margin-top:70px;
 text-align:center;
-margin-bottom:30px;
-}
-
-.qa-intro{
-text-align:center;
-margin-bottom:30px;
 }
 
 .qa-item{
-margin-bottom:28px;
-}
-
-.qa-item h3{
-font-family:'Playfair Display';
-color:#b46b2c;
+margin-bottom:25px;
 }
 
 footer{
