@@ -3,8 +3,17 @@ function openInvite(){
 document.getElementById("intro").style.display="none";
 document.getElementById("site").style.display="block";
 
+const music = document.getElementById("music");
+
+if(music){
+
+music.volume=0.6;
+
+music.play().catch(()=>{});
+
 }
 
+}
 
 const weddingDate = new Date("April 19, 2026");
 
@@ -38,29 +47,5 @@ el.innerHTML = "Thank you for celebrating with us ❤️";
 }
 
 updateCountdown();
+
 setInterval(updateCountdown,3600000);
-
-
-/* invite filtering */
-
-const params = new URLSearchParams(window.location.search);
-const code = params.get("g");
-
-function hideSection(name){
-
-const el = document.querySelector("." + name);
-
-if(el){el.remove();}
-
-}
-
-if(code==="B2"){
-hideSection("engagement");
-hideSection("sangeet");
-}
-
-if(code==="C3"){
-hideSection("engagement");
-hideSection("haldi");
-hideSection("sangeet");
-}
