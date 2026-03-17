@@ -95,6 +95,11 @@ margin:auto;
 border:3px solid #7C0A2B;
 }
 
+.engagement img{
+border:3px solid #790C94;
+}
+
+
 .haldi img{
 border:3px solid #c6a53a;
 }
@@ -116,6 +121,11 @@ border-radius:26px;
 color:white;
 cursor:pointer;
 margin-top:12px;
+}
+
+.btn-engagement{
+background:#790C94;
+color:white;
 }
 
 .btn-haldi{
