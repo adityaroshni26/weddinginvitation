@@ -78,15 +78,12 @@ X3t8  → Wedding only (cover + wedding)
 
 
 if(code === "p9L4"){
-
+  hideSection("engagement");
   hideSection("sangeet");
-
 }
 
-
 if(code === "X3t8"){
-
+  hideSection("engagement");
   hideSection("haldi");
   hideSection("sangeet");
-
 }
