@@ -56,34 +56,45 @@ setInterval(updateCountdown,3600000);
 const params = new URLSearchParams(window.location.search);
 const code = params.get("c");
 
-
 function hideSection(section){
-
   const el = document.querySelector("." + section);
-
   if(el){
     el.remove();
   }
-
 }
 
-
 /*
-Invite Codes
+Codes
 
-7kF2  → Family (all events)
-p9L4  → Friends (cover + haldi + wedding)
-X3t8  → Wedding only (cover + wedding)
+7kF2 → Family (your side → cover.png)
+A9Z7 → Family (her side → cover2.png)
+p9L4 → Friends
+X3t8 → Wedding
 */
 
 
+/* default: show main cover, hide alt */
+hideSection("cover-alt");
+
+
+if(code === "A9Z7"){
+
+  // her family → show alternate cover
+  hideSection("cover-main");
+
+}
+
 if(code === "p9L4"){
+
   hideSection("engagement");
   hideSection("sangeet");
+
 }
 
 if(code === "X3t8"){
+
   hideSection("engagement");
   hideSection("haldi");
   hideSection("sangeet");
+
 }
