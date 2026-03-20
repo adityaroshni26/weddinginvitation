@@ -91,9 +91,16 @@ margin:auto;
 
 /* EVENT BORDER COLORS */
 
-.cover img{
+/* cover (your side) */
+.cover-main img{
 border:3px solid #7C0A2B;
 }
+
+/* cover (her side) */
+.cover-alt img{
+border:3px solid #7C0A2B;
+}
+
 
 .engagement img{
 border:3px solid #790C94;
