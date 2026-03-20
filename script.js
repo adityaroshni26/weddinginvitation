@@ -53,15 +53,17 @@ setInterval(updateCountdown,3600000);
 
 /* INVITE FILTERING */
 
+
 const params = new URLSearchParams(window.location.search);
 const code = params.get("c");
 
 function hideSection(section){
   const el = document.querySelector("." + section);
   if(el){
-    el.remove();
+    el.style.display = "none";
   }
 }
+
 
 /*
 Codes
@@ -73,16 +75,18 @@ X3t8 → Wedding
 */
 
 
-/* default: show main cover, hide alt */
+// DEFAULT → show main cover, hide alt
 hideSection("cover-alt");
 
 
 if(code === "A9Z7"){
 
   // her family → show alternate cover
-  hideSection("cover-main");
+  hideSection("cover-main");   // hide main
+  document.querySelector(".cover-alt").style.display = "block"; // show alt
 
 }
+
 
 if(code === "p9L4"){
 
@@ -90,6 +94,7 @@ if(code === "p9L4"){
   hideSection("sangeet");
 
 }
+
 
 if(code === "X3t8"){
 
