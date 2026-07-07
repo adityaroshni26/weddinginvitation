@@ -218,19 +218,15 @@ body{
 }
 
 /* ===============================
-   WEDDING FILMS
+   OUR WEDDING STORY
 ================================== */
 
 .section-title{
 
     text-align:center;
-
     font-family:'Playfair Display',serif;
-
     color:var(--wine);
-
-    font-size:2.8rem;
-
+    font-size:3rem;
     margin-bottom:18px;
 
 }
@@ -238,161 +234,187 @@ body{
 .section-description{
 
     max-width:760px;
-
-    margin:0 auto 60px;
-
+    margin:0 auto 70px;
     text-align:center;
-
     font-size:1.35rem;
-
-    color:#6a5d56;
+    color:#6b5a50;
 
 }
+
+
+/* ===============================
+   GALLERY GRID
+================================== */
 
 .story{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(340px,1fr));
 
-    gap:38px;
+    gap:42px;
 
-    margin-bottom:90px;
+    align-items:start;
 
 }
 
+
+/* ===============================
+   CARD
+================================== */
+
 .film-card{
 
-    position:relative;
-
-    background:white;
-
+    background:#fff;
     border-radius:24px;
-
     overflow:hidden;
 
-    box-shadow:0 14px 35px rgba(0,0,0,.12);
+    box-shadow:
+    0 14px 40px rgba(0,0,0,.12);
 
-    transition:all .35s ease;
+    transition:.35s;
 
 }
 
 .film-card:hover{
-    box-shadow:var(--shadow);
-}
 
+    transform:translateY(-8px);
 
-.film-card a{
-
-    text-decoration:none;
-
-    color:inherit;
-
-    display:block;
+    box-shadow:
+    0 24px 60px rgba(0,0,0,.18);
 
 }
 
-.film-card img{
+/* ===============================
+   POSTER
+================================== */
 
+.film-link{
+
+    position:relative;
     display:block;
+    overflow:hidden;
+
+}
+
+.film-link img{
 
     width:100%;
+    height:420px;
 
-    height:auto;
+    object-fit:cover;
 
-    transition:transform .6s ease;
+    display:block;
+
+    transition:
+    transform .5s ease,
+    filter .5s ease;
+
+}
+
+/* ===============================
+   OVERLAY
+================================== */
+
+.poster-overlay{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.25);
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.play-circle{
+
+    width:86px;
+    height:86px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:var(--wine);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    transition:.35s;
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.25);
 
 }
 
 .film-card:hover img{
 
-    transform:scale(1.04);
+    transform:scale(1.05);
+
+    filter:brightness(.72);
 
 }
 
-/* Overlay */
-
-.play-button{
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:25px;
-
-    transform:translateX(-50%);
-
-    background:rgba(124,10,43,.94);
-
-    color:white;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:18px;
-
-    padding:14px 28px;
-
-    border-radius:999px;
-
-    transition:.3s;
-
-    backdrop-filter:blur(8px);
-
-    box-shadow:0 10px 24px rgba(0,0,0,.22);
-
-}
-
-.film-card:hover .play-button{
-
-    background:var(--gold);
-
-    color:#fff;
-
-    transform:translateX(-50%) scale(1.05);
-
-}
-
-/* Nice fade on hover */
-
-.film-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.28),
-        rgba(0,0,0,0)
-    );
-
-    opacity:0;
-
-    transition:.4s;
-
-    pointer-events:none;
-
-}
-
-.film-card:hover::after{
+.film-card:hover .poster-overlay{
 
     opacity:1;
 
 }
 
-/* Small section spacing */
+.film-card:hover .play-circle{
 
-.story .film-card:nth-child(odd){
+    transform:scale(1.12);
 
-    margin-top:12px;
+    background:var(--gold);
+
+    color:white;
 
 }
 
-.story .film-card:nth-child(even){
+/* ===============================
+   CARD TEXT
+================================== */
 
-    margin-bottom:12px;
+.film-info{
+
+    padding:26px;
+
+    text-align:center;
+
+}
+
+.film-title{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:1.65rem;
+
+    color:var(--wine);
+
+    margin-bottom:8px;
+
+}
+
+.film-subtitle{
+
+    font-size:1.15rem;
+
+    color:#6d6057;
+
+    line-height:1.6;
 
 }
 
@@ -713,19 +735,6 @@ to{
 
     }
 
-    .play-button{
-
-        left:50%;
-
-        width:82%;
-
-        text-align:center;
-
-        padding:14px;
-
-        font-size:1rem;
-
-    }
 
     .footer{
 
@@ -787,13 +796,40 @@ to{
 
     }
 
-    .play-button{
+   .film-link img{
 
-        width:88%;
+    height:260px;
 
-        font-size:.95rem;
+}
 
-    }
+.play-circle{
+
+    width:64px;
+    height:64px;
+
+    font-size:24px;
+
+}
+
+.film-info{
+
+    padding:18px;
+
+}
+
+.film-title{
+
+    font-size:1.25rem;
+
+}
+
+.film-subtitle{
+
+    font-size:.95rem;
+
+}
+
+   
 
 }
 
@@ -801,37 +837,6 @@ to{
 /* ===============================
    SMALL POLISH
 ================================== */
-
-button,
-.play-button{
-
-    letter-spacing:.5px;
-
-}
-
-.film-card{
-
-    cursor:pointer;
-
-}
-
-.film-card img{
-
-    border-radius:18px;
-
-}
-
-.open-btn:active{
-
-    transform:scale(.98);
-
-}
-
-.play-button:active{
-
-    transform:translateX(-50%) scale(.98);
-
-}
 
 .footer h3{
 
@@ -906,7 +911,33 @@ button,
     bottom:16px;
 
     font-size:20px;
+   
+.film-link img{
 
+    height:320px;
+
+}
+
+.play-circle{
+
+    width:72px;
+    height:72px;
+
+    font-size:28px;
+
+}
+
+.film-title{
+
+    font-size:1.4rem;
+
+}
+
+.film-subtitle{
+
+    font-size:1rem;
+
+}
 }
 
 }
