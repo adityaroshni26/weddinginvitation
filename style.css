@@ -1,16 +1,851 @@
-body{margin:0;font-family:'Cormorant Garamond',serif;background:#faf6ef;color:#3d2b1f}
-.hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.glass{position:relative;background:rgba(255,248,236,.72);backdrop-filter:blur(14px);padding:50px;border-radius:24px;max-width:620px;text-align:center;box-shadow:0 15px 45px rgba(0,0,0,.2)}
-h1{font-family:'Playfair Display',serif;font-size:3rem;margin:0}
-.lead{font-size:1.5rem;line-height:1.7}
-.thanks{font-size:1.6rem;font-weight:bold}
-button{padding:16px 34px;border:none;border-radius:999px;background:#d4af37;font-size:1rem;cursor:pointer}
-.films{max-width:900px;margin:auto;padding:70px 20px}
-.films h2{text-align:center;font-family:'Playfair Display',serif;font-size:2.5rem}
-.poster{display:block;margin:40px 0;text-decoration:none;color:#222}
-.poster img{width:100%;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.18);transition:.3s}
-.poster img:hover{transform:scale(1.02)}
-.poster span{display:block;text-align:center;font-size:1.4rem;margin-top:14px}
-footer{text-align:center;padding:50px 0}
-@media(max-width:768px){.glass{margin:20px;padding:30px}.h1{font-size:2.2rem}.lead{font-size:1.2rem}}
+/* ===============================
+   Aditya & Roshni | Wedding Memories
+================================== */
+
+:root{
+    --wine:#7C0A2B;
+    --gold:#c9a34e;
+    --cream:#faf6ef;
+    --text:#3d2b1f;
+    --shadow:0 18px 45px rgba(0,0,0,.18);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--cream);
+    color:var(--text);
+    font-family:'Cormorant Garamond',serif;
+    overflow-x:hidden;
+    line-height:1.7;
+}
+
+/* ===============================
+   LANDING
+================================== */
+
+#intro{
+    position:relative;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+#bg-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+.hero-overlay{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.18);
+
+    padding:20px;
+}
+
+.invite-card{
+
+    width:100%;
+    max-width:640px;
+
+    text-align:center;
+
+    padding:55px;
+
+    background:rgba(255,248,240,.72);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.55);
+
+    border-radius:30px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+}
+
+.invite-card h1{
+
+    font-family:'Playfair Display',serif;
+
+    color:var(--wine);
+
+    font-size:3.5rem;
+
+    margin-bottom:10px;
+
+}
+
+.hero-divider{
+
+    width:90px;
+
+    height:2px;
+
+    background:var(--gold);
+
+    margin:22px auto;
+
+}
+
+.hero-line{
+
+    font-size:1.8rem;
+
+    margin:6px 0;
+
+}
+
+.hero-highlight{
+
+    color:var(--wine);
+
+    font-family:'Playfair Display',serif;
+
+    font-size:2rem;
+
+    margin:20px 0;
+
+}
+
+.hero-message{
+
+    font-size:1.3rem;
+
+    max-width:520px;
+
+    margin:30px auto;
+
+}
+
+.open-btn{
+
+    background:var(--gold);
+
+    color:white;
+
+    border:none;
+
+    padding:16px 36px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:1rem;
+
+}
+
+.open-btn:hover{
+
+    transform:translateY(-4px);
+
+    background:#b78b2f;
+
+}
+
+/* ===============================
+   SITE
+================================== */
+
+#site{
+    display:none;
+}
+
+.container{
+
+    max-width:1180px;
+
+    margin:auto;
+
+    padding:80px 22px;
+
+}
+
+.intro-story{
+
+    text-align:center;
+
+    margin-bottom:80px;
+
+}
+
+.intro-story h2{
+
+    font-family:'Playfair Display',serif;
+
+    color:var(--wine);
+
+    font-size:2.7rem;
+
+    margin-bottom:15px;
+
+}
+
+.intro-story p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    font-size:1.35rem;
+
+    color:#5b4c43;
+
+}
+
+/* ===============================
+   WEDDING FILMS
+================================== */
+
+.section-title{
+
+    text-align:center;
+
+    font-family:'Playfair Display',serif;
+
+    color:var(--wine);
+
+    font-size:2.8rem;
+
+    margin-bottom:18px;
+
+}
+
+.section-description{
+
+    max-width:760px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+    font-size:1.35rem;
+
+    color:#6a5d56;
+
+}
+
+.story{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:38px;
+
+    margin-bottom:90px;
+
+}
+
+.film-card{
+
+    position:relative;
+
+    background:white;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:0 14px 35px rgba(0,0,0,.12);
+
+    transition:all .35s ease;
+
+}
+
+.film-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 24px 55px rgba(0,0,0,.22);
+
+}
+
+.film-card a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    display:block;
+
+}
+
+.film-card img{
+
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+    transition:transform .6s ease;
+
+}
+
+.film-card:hover img{
+
+    transform:scale(1.04);
+
+}
+
+/* Overlay */
+
+.play-button{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:25px;
+
+    transform:translateX(-50%);
+
+    background:rgba(124,10,43,.94);
+
+    color:white;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:18px;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    transition:.3s;
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:0 10px 24px rgba(0,0,0,.22);
+
+}
+
+.film-card:hover .play-button{
+
+    background:var(--gold);
+
+    color:#fff;
+
+    transform:translateX(-50%) scale(1.05);
+
+}
+
+/* Nice fade on hover */
+
+.film-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.28),
+        rgba(0,0,0,0)
+    );
+
+    opacity:0;
+
+    transition:.4s;
+
+    pointer-events:none;
+
+}
+
+.film-card:hover::after{
+
+    opacity:1;
+
+}
+
+/* Small section spacing */
+
+.story .film-card:nth-child(odd){
+
+    margin-top:12px;
+
+}
+
+.story .film-card:nth-child(even){
+
+    margin-bottom:12px;
+
+}
+
+/* ===============================
+   THANK YOU
+================================== */
+
+.footer{
+
+    position:relative;
+
+    text-align:center;
+
+    padding:100px 20px 80px;
+
+    margin-top:40px;
+
+}
+
+.footer-divider{
+
+    width:120px;
+
+    height:2px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        var(--gold),
+        transparent
+    );
+
+    margin:0 auto 35px;
+
+}
+
+.footer h2{
+
+    font-family:'Playfair Display',serif;
+
+    color:var(--wine);
+
+    font-size:2.8rem;
+
+    margin-bottom:25px;
+
+}
+
+.footer p{
+
+    max-width:760px;
+
+    margin:18px auto;
+
+    font-size:1.35rem;
+
+    color:#5c4e46;
+
+}
+
+.footer h3{
+
+    margin-top:45px;
+
+    font-family:'Playfair Display',serif;
+
+    color:var(--wine);
+
+    font-size:2rem;
+
+    font-weight:600;
+
+}
+
+
+/* ===============================
+   REVEAL ANIMATIONS
+================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(45px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ===============================
+   SMOOTH IMAGE LOADING
+================================== */
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+.film-card img{
+
+    will-change:transform;
+
+}
+
+
+/* ===============================
+   SELECTION
+================================== */
+
+::selection{
+
+    background:var(--gold);
+
+    color:white;
+
+}
+
+
+/* ===============================
+   SCROLLBAR
+================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f3eee6;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--gold);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#b58d32;
+
+}
+
+
+/* ===============================
+   LINKS
+================================== */
+
+a{
+
+    color:inherit;
+
+}
+
+a:hover{
+
+    text-decoration:none;
+
+}
+
+
+/* ===============================
+   SUBTLE PAGE FADE
+================================== */
+
+body{
+
+    animation:pageFade .8s ease;
+
+}
+
+@keyframes pageFade{
+
+from{
+
+    opacity:0;
+
+}
+
+to{
+
+    opacity:1;
+
+}
+
+}
+
+/* ===============================
+   MOBILE OPTIMISATION
+================================== */
+
+@media (max-width:992px){
+
+    .container{
+
+        padding:70px 20px;
+
+    }
+
+    .story{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+    }
+
+    .film-card{
+
+        max-width:700px;
+
+        margin:auto;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .invite-card{
+
+        width:92%;
+
+        padding:34px 24px;
+
+        border-radius:22px;
+
+    }
+
+    .invite-card h1{
+
+        font-size:2.5rem;
+
+    }
+
+    .hero-divider{
+
+        width:70px;
+
+        margin:18px auto;
+
+    }
+
+    .hero-line{
+
+        font-size:1.35rem;
+
+    }
+
+    .hero-highlight{
+
+        font-size:1.7rem;
+
+    }
+
+    .hero-message{
+
+        font-size:1.05rem;
+
+        line-height:1.8;
+
+    }
+
+    .open-btn{
+
+        width:100%;
+
+        padding:15px;
+
+        font-size:1rem;
+
+    }
+
+    .container{
+
+        padding:55px 18px;
+
+    }
+
+    .intro-story h2,
+    .section-title,
+    .footer h2{
+
+        font-size:2.1rem;
+
+    }
+
+    .intro-story p,
+    .section-description,
+    .footer p{
+
+        font-size:1.15rem;
+
+    }
+
+    .film-card{
+
+        border-radius:18px;
+
+    }
+
+    .play-button{
+
+        left:50%;
+
+        width:82%;
+
+        text-align:center;
+
+        padding:14px;
+
+        font-size:1rem;
+
+    }
+
+    .footer{
+
+        padding:70px 20px;
+
+    }
+
+    .footer h3{
+
+        font-size:1.6rem;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .invite-card{
+
+        padding:26px 18px;
+
+    }
+
+    .invite-card h1{
+
+        font-size:2rem;
+
+    }
+
+    .hero-line{
+
+        font-size:1.15rem;
+
+    }
+
+    .hero-highlight{
+
+        font-size:1.45rem;
+
+    }
+
+    .hero-message{
+
+        font-size:1rem;
+
+    }
+
+    .section-title{
+
+        font-size:1.8rem;
+
+    }
+
+    .intro-story p,
+    .section-description,
+    .footer p{
+
+        font-size:1rem;
+
+    }
+
+    .play-button{
+
+        width:88%;
+
+        font-size:.95rem;
+
+    }
+
+}
+
+
+/* ===============================
+   SMALL POLISH
+================================== */
+
+button,
+.play-button{
+
+    letter-spacing:.5px;
+
+}
+
+.film-card{
+
+    cursor:pointer;
+
+}
+
+.film-card img{
+
+    border-radius:18px;
+
+}
+
+.open-btn:active{
+
+    transform:scale(.98);
+
+}
+
+.play-button:active{
+
+    transform:translateX(-50%) scale(.98);
+
+}
+
+.footer h3{
+
+    line-height:1.6;
+
+}
+
+.hero-highlight,
+.section-title,
+.footer h2{
+
+    letter-spacing:.4px;
+
+}
