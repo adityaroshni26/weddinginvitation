@@ -470,6 +470,72 @@ console.log(
 document.documentElement.style.scrollBehavior = "smooth";
 
 /* ==========================================
+   VIDEO MODAL
+========================================== */
+
+const modal=document.getElementById("videoModal");
+
+const frame=document.getElementById("videoFrame");
+
+const close=document.getElementById("closeVideo");
+
+document.querySelectorAll(".film-link").forEach(function(link){
+
+    link.addEventListener("click",function(e){
+
+        e.preventDefault();
+
+        const video=link.dataset.video;
+
+        frame.src=
+
+        "https://www.youtube.com/embed/"+
+
+        video+
+
+        "?autoplay=1&rel=0&modestbranding=1";
+
+        modal.style.display="flex";
+
+        document.body.style.overflow="hidden";
+
+    });
+
+});
+
+close.addEventListener("click",closeVideo);
+
+modal.addEventListener("click",function(e){
+
+    if(e.target===modal){
+
+        closeVideo();
+
+    }
+
+});
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
+
+        closeVideo();
+
+    }
+
+});
+
+function closeVideo(){
+
+    frame.src="";
+
+    modal.style.display="none";
+
+    document.body.style.overflow="auto";
+
+}
+
+/* ==========================================
    MOBILE PERFORMANCE
 ========================================== */
 
