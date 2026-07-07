@@ -9,27 +9,55 @@ const music = document.getElementById("music");
 
 function openInvite(){
 
+    const button = document.querySelector(".open-btn");
+
+if(button){
+
+    button.style.transform = "scale(.96)";
+
+    setTimeout(function(){
+
+        button.style.transform = "";
+
+    },150);
+
+} 
+   
+    intro.style.transition = "opacity .8s ease";
+
     intro.style.opacity = "0";
 
-    setTimeout(()=>{
+    setTimeout(function(){
 
         intro.style.display = "none";
 
         site.style.display = "block";
 
+        site.style.opacity = "0";
+
+        site.style.transition = "opacity .9s ease";
+
+        requestAnimationFrame(function(){
+
+            site.style.opacity = "1";
+
+        });
+
         window.scrollTo({
+
             top:0,
+
             behavior:"smooth"
+
         });
 
         playMusic();
 
         initialiseReveal();
 
-    },500);
+    },800);
 
 }
-
 
 /* ==========================================
    MUSIC
@@ -39,9 +67,15 @@ function playMusic(){
 
     if(!music) return;
 
-    music.volume = 0.35;
+    music.volume = 0;
 
     const promise = music.play();
+
+    fadeInMusic();
+
+   musicButton.innerHTML = "🔊";
+
+musicPlaying = true;
 
     if(promise){
 
@@ -68,6 +102,34 @@ function playMusic(){
 }
 
 /* ==========================================
+   MUSIC FADE IN
+========================================== */
+
+function fadeInMusic(){
+
+    let volume = 0;
+
+    music.volume = 0;
+
+    const fade = setInterval(function(){
+
+        volume += 0.02;
+
+        if(volume >= 0.22){
+
+            volume = 0.22;
+
+            clearInterval(fade);
+
+        }
+
+        music.volume = volume;
+
+    },180);
+
+}
+
+/* ==========================================
    SCROLL REVEAL
 ========================================== */
 
@@ -79,11 +141,15 @@ function initialiseReveal(){
 
         function(entries){
 
-            entries.forEach(function(entry){
+            entries.forEach(function(entry,index){
 
                 if(entry.isIntersecting){
 
-                    entry.target.classList.add("visible");
+                    setTimeout(function(){
+
+    entry.target.classList.add("visible");
+
+},index*120);
 
                     observer.unobserve(entry.target);
 
@@ -136,7 +202,43 @@ document.addEventListener("DOMContentLoaded",function(){
 
 });
 
+/* ==========================================
+   CARD TILT
+========================================== */
 
+document.querySelectorAll(".film-card").forEach(function(card){
+
+    card.addEventListener("mousemove",function(e){
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+
+        const y = e.clientY - rect.top;
+
+        const rotateY = (x / rect.width - 0.5) * 10;
+
+        const rotateX = (0.5 - y / rect.height) * 10;
+
+        card.style.transform =
+
+        `perspective(900px)
+
+        rotateX(${rotateX}deg)
+
+        rotateY(${rotateY}deg)
+
+        translateY(-8px)`;
+
+    });
+
+    card.addEventListener("mouseleave",function(){
+
+        card.style.transform="";
+
+    });
+
+});
 
 /* ==========================================
    PARALLAX HERO (Desktop)
@@ -160,13 +262,13 @@ window.addEventListener("scroll",function(){
 
 const musicButton = document.createElement("button");
 
-musicButton.innerHTML = "♫";
+musicButton.innerHTML = "🔊";
 
 musicButton.className = "music-toggle";
 
 document.body.appendChild(musicButton);
 
-let musicPlaying = true;
+let musicPlaying = false;
 
 musicButton.addEventListener("click",function(){
 
@@ -176,7 +278,7 @@ musicButton.addEventListener("click",function(){
 
         music.play();
 
-        musicButton.innerHTML = "♫";
+        musicButton.innerHTML = "🔊";
 
         musicPlaying = true;
 
@@ -186,7 +288,7 @@ musicButton.addEventListener("click",function(){
 
         music.pause();
 
-        musicButton.innerHTML = "♪";
+        musicButton.innerHTML = "🔇";
 
         musicPlaying = false;
 
@@ -194,7 +296,55 @@ musicButton.addEventListener("click",function(){
 
 });
 
+/* ==========================================
+   BACK TO TOP
+========================================== */
 
+const topButton = document.createElement("button");
+
+topButton.innerHTML = "↑";
+
+topButton.className = "music-toggle";
+
+topButton.style.bottom = "95px";
+
+topButton.style.opacity = "0";
+
+topButton.style.pointerEvents = "none";
+
+document.body.appendChild(topButton);
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY > 600){
+
+        topButton.style.opacity = "1";
+
+        topButton.style.pointerEvents = "auto";
+
+    }
+
+    else{
+
+        topButton.style.opacity = "0";
+
+        topButton.style.pointerEvents = "none";
+
+    }
+
+});
+
+topButton.addEventListener("click",function(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
 
 /* ==========================================
    KEYBOARD SHORTCUT
@@ -202,7 +352,7 @@ musicButton.addEventListener("click",function(){
 
 document.addEventListener("keydown",function(event){
 
-    if(event.key.toLowerCase()==="m"){
+    if(event.key.toLowerCase()==="m" && !event.repeat){
 
         musicButton.click();
 
@@ -218,7 +368,15 @@ document.addEventListener("keydown",function(event){
 
 window.onbeforeunload=function(){
 
-    window.scrollTo(0,0);
+    window.scrollTo({
+
+        top:0,
+
+        left:0,
+
+        behavior:"instant"
+
+    });
 
 };
 
@@ -236,6 +394,22 @@ window.addEventListener("load",function(){
 
         img.decoding="async";
 
+        img.style.opacity="0";
+
+        img.onload=function(){
+
+            img.style.transition="opacity .6s ease";
+
+            img.style.opacity="1";
+
+        };
+
+        if(img.complete){
+
+            img.style.opacity="1";
+
+        }
+
     });
 
 });
@@ -245,19 +419,66 @@ window.addEventListener("load",function(){
 /* ==========================================
    CONSOLE MESSAGE
 ========================================== */
+/* ==========================================
+   PAGE VISIBILITY
+========================================== */
+
+document.addEventListener("visibilitychange",function(){
+
+    if(!music) return;
+
+    if(document.hidden){
+
+        music.pause();
+
+    }
+
+    else if(musicPlaying){
+
+        music.play().catch(()=>{});
+
+    }
+
+});
+
+console.clear();
 
 console.log(
 
-"%c❤️ Aditya & Roshni ❤️",
+"%cAditya ❤ Roshni",
 
-"font-size:20px;color:#7C0A2B;font-weight:bold;"
+"font-size:26px;font-weight:bold;color:#7C0A2B;"
 
 );
 
 console.log(
 
-"%cThank you for visiting our wedding memories.",
+"%cThank you for visiting our Wedding Memories.",
 
-"font-size:14px;color:#555;"
+"font-size:15px;color:#c9a34e;"
 
 );
+
+console.log(
+
+"%cMay every visitor leave with a smile. ❤️",
+
+"font-size:13px;color:#666;"
+
+);
+
+document.documentElement.style.scrollBehavior = "smooth";
+
+/* ==========================================
+   MOBILE PERFORMANCE
+========================================== */
+
+if(window.innerWidth<768){
+
+    document.querySelectorAll(".film-card").forEach(function(card){
+
+        card.style.transform="none";
+
+    });
+
+}
