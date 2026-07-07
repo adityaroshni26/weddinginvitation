@@ -1,187 +1,153 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Aditya & Roshni invite you</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya & Roshni | Wedding Memories</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- LANDING -->
+<section id="intro">
 
-<div id="intro">
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="intro.mp4" type="video/mp4">
+    </video>
 
-<video autoplay muted loop playsinline id="bg-video">
-<source src="intro.mp4" type="video/mp4">
-</video>
+    <div class="hero-overlay">
 
-<div class="invite-card">
+        <div class="invite-card">
 
-<h1>Aditya & Roshni</h1>
+            <h1>Aditya &amp; Roshni</h1>
 
-<p>
-Together with their families invite you to celebrate their wedding
-</p>
+            <div class="hero-divider"></div>
 
-<p class="date"><strong>19 April 2026</strong></p>
+            <p class="hero-line">Two souls.</p>
+            <p class="hero-line">One promise.</p>
 
-<p>Bangalore</p>
+            <p class="hero-highlight">
+                A lifetime together.
+            </p>
 
-<p id="countdown"></p>
+            <p class="hero-message">
+                Thank you for every blessing,
+                every smile,
+                every hug and every dance.
+                <br><br>
+                This little corner of the internet is our way of sharing
+                the memories that will stay with us forever.
+            </p>
 
-<button class="open-btn" onclick="openInvite()">Open Invitation</button>
+            <button class="open-btn" onclick="openInvite()">
+                Relive Our Wedding
+            </button>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-
-<!-- MAIN SITE -->
+</section>
 
 <div id="site">
 
 <div class="container">
 
+<section class="intro-story">
+
+<h2>Our Story</h2>
+
+<p>
+Some journeys begin with a single conversation.
+Ours became a lifetime of memories.
+
+From Ganesh Sthapna to our wedding vows,
+every celebration became unforgettable because of the people who stood beside us.
+
+Thank you for being a part of our story.
+</p>
+
+</section>
+
 <section class="story">
 
-<div class="story-section cover-main">
-<img src="cover.png">
-</div>
+<h2 class="section-title">
+The Wedding Films
+</h2>
 
-<div class="story-section cover-alt">
-<img src="cover2.png">
-</div>
-  
-<div class="story-section engagement">
-
-<img src="engagement.png">
-
-<a href="https://maps.google.com/?q=Radisson Blu Atria Bangalore" target="_blank">
-<button class="btn-engagement">View Location</button>
-</a>
-
-</div>
-  
-<div class="story-section haldi">
-
-<img src="haldi.png">
-
-<a href="https://maps.google.com/?q=Sindhi Seva Samiti Bangalore" target="_blank">
-<button class="btn-haldi">View Location</button>
-</a>
-
-</div>
-
-<div class="story-section sangeet">
-
-<img src="sangeet.png">
-
-<a href="https://maps.google.com/?q=St Marks Radisson Hotel Bangalore" target="_blank">
-<button class="btn-sangeet">View Location</button>
-</a>
-
-</div>
-
-<div class="story-section wedding">
-
-<img src="wedding.png">
-
-<a href="https://maps.google.com/?q=Chamra Vajra Mukta Jayamahal Road Bangalore" target="_blank">
-<button class="btn-wedding">View Location</button>
-</a>
-
-</div>
-
-</section>
-
-
-<!-- RSVP -->
-
-<section class="rsvp">
-
-<h2>RSVP</h2>
-
-<p class="rsvp-note">
-
-Please RSVP by <strong>3rd April 2026</strong>.
-
+<p class="section-description">
+Relive every celebration through our favourite moments.
 </p>
 
-<iframe
-src="https://docs.google.com/forms/d/e/1FAIpQLScQY8RDx7FhXDMpcvY9gWnvVlF-vG9wHUNlErAZYsRXr1n-Bw/viewform"
-width="100%"
-height="650"
-frameborder="0">
-</iframe>
+<div class="film-card">
+<a href="https://youtu.be/pRqP_y9ry08" target="_blank">
+<img src="ganesh.png" alt="Ganesh Sthapna">
+<div class="play-button">▶ Watch Film</div>
+</a>
+</div>
+
+<div class="film-card">
+<a href="https://youtu.be/fRj4SQ_-WOQ" target="_blank">
+<img src="engagement.png" alt="Engagement">
+<div class="play-button">▶ Watch Film</div>
+</a>
+</div>
+
+<div class="film-card">
+<a href="https://youtu.be/Z89HxGtfFvo" target="_blank">
+<img src="haldi.png" alt="Haldi">
+<div class="play-button">▶ Watch Film</div>
+</a>
+</div>
+
+<div class="film-card">
+<a href="https://youtu.be/YVUiMlx6-fU" target="_blank">
+<img src="baraat.png" alt="Baraat">
+<div class="play-button">▶ Watch Film</div>
+</a>
+</div>
+
+<div class="film-card">
+<a href="https://youtu.be/s9tekDImw0s" target="_blank">
+<img src="wedding.png" alt="Wedding">
+<div class="play-button">▶ Watch Film</div>
+</a>
+</div>
 
 </section>
 
+<footer class="footer">
 
-<!-- Q&A -->
+<div class="footer-divider"></div>
 
-<section class="qa">
+<h2>Thank You ❤️</h2>
 
-<h2>Q & A</h2>
-
-<p class="qa-intro">
-For our friends and family who may have a few questions, here are some helpful details.
+<p>
+Our wedding may have lasted a few days,
+but the memories will stay with us forever.
 </p>
 
-  
-<div class="qa-item">
+<p>
+Thank you for every blessing,
+every smile,
+every hug,
+every dance,
+and for filling our hearts with love.
+</p>
 
-<h3>What will the weather be like?</h3>
-
-<p>Bangalore in April is warm during the day and pleasant in the evenings (~22–34°C).</p>
-
-</div>
-
-<div class="qa-item">
-
-<h3>What should I wear?</h3>
-
-<p>Wear colors you love and clothes you feel good in. Comfort and celebration are the only dress codes.</p>
-
-</div>
-
-<div class="qa-item">
-
-<h3>Is the wedding indoors or outdoors?</h3>
-
-<p>Most ceremonies are indoors, whilst the wedding is semi-outdoor.</p>
-
-</div>
-
-<div class="qa-item">
-
-<h3>Is sustainability part of the celebration?</h3>
-
-<p>We’re doing our best to keep the celebration big and the environmental footprint small, encouraging mindful choices wherever possible.</p>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<p>We look forward to celebrating with you!</p>
+<h3>
+With love,<br><br>
+Aditya &amp; Roshni
+</h3>
 
 </footer>
 
 </div>
 
 </div>
-
 
 <audio id="music" loop>
 <source src="music.mp3" type="audio/mpeg">
