@@ -278,12 +278,9 @@ body{
 }
 
 .film-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 24px 55px rgba(0,0,0,.22);
-
+    box-shadow:var(--shadow);
 }
+
 
 .film-card a{
 
