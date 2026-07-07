@@ -1,105 +1,155 @@
+/* ==========================================
+   ADITYA & ROSHNI | WEDDING MEMORIES
+========================================== */
+
+const intro = document.getElementById("intro");
+const site = document.getElementById("site");
+const music = document.getElementById("music");
+
+
 function openInvite(){
 
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("site").style.display = "block";
+    intro.style.opacity = "0";
 
-  const music = document.getElementById("music");
+    setTimeout(()=>{
 
-  if(music){
-    music.volume = 0.6;
-    music.play().catch(()=>{});
-  }
+        intro.style.display = "none";
 
-}
+        site.style.display = "block";
 
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
 
-/* COUNTDOWN */
+        playMusic();
 
-const weddingDate = new Date("April 19, 2026");
+        initialiseReveal();
 
-function updateCountdown(){
-
-  const today = new Date();
-  today.setHours(0,0,0,0);
-
-  const diff = weddingDate - today;
-
-  const days = Math.ceil(diff/(1000*60*60*24));
-
-  const el = document.getElementById("countdown");
-
-  if(days > 1){
-    el.innerHTML = days + " days to go";
-  }
-
-  else if(days === 1){
-    el.innerHTML = "1 day to go";
-  }
-
-  else if(days === 0){
-    el.innerHTML = "The celebrations begin today ✨";
-  }
-
-  else{
-    el.innerHTML = "Thank you for celebrating with us ❤️";
-  }
-
-}
-
-updateCountdown();
-setInterval(updateCountdown,3600000);
-
-
-
-/* INVITE FILTERING */
-
-
-const params = new URLSearchParams(window.location.search);
-const code = params.get("c");
-
-function hideSection(section){
-  const el = document.querySelector("." + section);
-  if(el){
-    el.style.display = "none";
-  }
-}
-
-
-/*
-Codes
-
-7kF2 → Family (your side → cover.png)
-A9Z7 → Family (her side → cover2.png)
-p9L4 → Friends
-X3t8 → Wedding
-*/
-
-
-// DEFAULT → show main cover, hide alt
-hideSection("cover-alt");
-
-
-if(code === "A9Z7"){
-
-  // her family → show alternate cover
-  hideSection("cover-main");   // hide main
-  document.querySelector(".cover-alt").style.display = "block"; // show alt
+    },500);
 
 }
 
 
-if(code === "p9L4"){
+/* ==========================================
+   MUSIC
+========================================== */
 
-  hideSection("engagement");
-  hideSection("sangeet");
+function playMusic(){
+
+    if(!music) return;
+
+    music.volume = 0.35;
+
+    const promise = music.play();
+
+    if(promise){
+
+        promise.catch(()=>{
+
+            document.body.addEventListener(
+
+                "click",
+
+                function firstClick(){
+
+                    music.play().catch(()=>{});
+
+                },
+
+                { once:true }
+
+            );
+
+        });
+
+    }
+
+}
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+function initialiseReveal(){
+
+    const revealItems = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+
+        function(entries){
+
+            entries.forEach(function(entry){
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:0.18,
+            rootMargin:"0px 0px -60px 0px"
+        }
+
+    );
+
+    revealItems.forEach(function(item){
+
+        observer.observe(item);
+
+    });
 
 }
 
 
-if(code === "X3t8"){
 
-  hideSection("engagement");
-  hideSection("haldi");
-  hideSection("sangeet");
+/* ==========================================
+   FILM CARD ANIMATIONS
+========================================== */
 
-}
+document.addEventListener("DOMContentLoaded",function(){
+
+    const cards = document.querySelectorAll(".film-card");
+
+    cards.forEach(function(card){
+
+        card.addEventListener("mouseenter",function(){
+
+            card.style.transform="translateY(-10px)";
+
+        });
+
+        card.addEventListener("mouseleave",function(){
+
+            card.style.transform="translateY(0px)";
+
+        });
+
+    });
+
+});
+
+
+
+/* ==========================================
+   PARALLAX HERO (Desktop)
+========================================== */
+
+window.addEventListener("scroll",function(){
+
+    const video = document.getElementById("bg-video");
+
+    if(!video) return;
+
+    const offset = window.pageYOffset;
+
+    video.style.transform = "translateY(" + (offset * 0.18) + "px)";
+
+});
