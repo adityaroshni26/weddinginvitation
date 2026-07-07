@@ -153,3 +153,111 @@ window.addEventListener("scroll",function(){
     video.style.transform = "translateY(" + (offset * 0.18) + "px)";
 
 });
+
+/* ==========================================
+   MUSIC TOGGLE
+========================================== */
+
+const musicButton = document.createElement("button");
+
+musicButton.innerHTML = "♫";
+
+musicButton.className = "music-toggle";
+
+document.body.appendChild(musicButton);
+
+let musicPlaying = true;
+
+musicButton.addEventListener("click",function(){
+
+    if(!music) return;
+
+    if(music.paused){
+
+        music.play();
+
+        musicButton.innerHTML = "♫";
+
+        musicPlaying = true;
+
+    }
+
+    else{
+
+        music.pause();
+
+        musicButton.innerHTML = "♪";
+
+        musicPlaying = false;
+
+    }
+
+});
+
+
+
+/* ==========================================
+   KEYBOARD SHORTCUT
+========================================== */
+
+document.addEventListener("keydown",function(event){
+
+    if(event.key.toLowerCase()==="m"){
+
+        musicButton.click();
+
+    }
+
+});
+
+
+
+/* ==========================================
+   BACK TO TOP ON REFRESH
+========================================== */
+
+window.onbeforeunload=function(){
+
+    window.scrollTo(0,0);
+
+};
+
+
+
+/* ==========================================
+   IMAGE LOADING
+========================================== */
+
+window.addEventListener("load",function(){
+
+    document.querySelectorAll(".film-card img").forEach(function(img){
+
+        img.loading="lazy";
+
+        img.decoding="async";
+
+    });
+
+});
+
+
+
+/* ==========================================
+   CONSOLE MESSAGE
+========================================== */
+
+console.log(
+
+"%c❤️ Aditya & Roshni ❤️",
+
+"font-size:20px;color:#7C0A2B;font-weight:bold;"
+
+);
+
+console.log(
+
+"%cThank you for visiting our wedding memories.",
+
+"font-size:14px;color:#555;"
+
+);
