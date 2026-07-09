@@ -4,7 +4,7 @@ const music = document.getElementById('music');
 const modal = document.getElementById('videoModal');
 const frame = document.getElementById('frame');
 const closeButton = document.getElementById('close');
-const enterButtons = document.querySelectorAll('[data-enter-site], [data-scroll-films]');
+const enterButton = document.querySelector('[data-enter-site]');
 const musicToggle = document.querySelector('[data-music-toggle]');
 const musicLabel = document.querySelector('[data-music-label]');
 let lastFocusedElement = null;
@@ -59,13 +59,9 @@ function closeVideo() {
   }
 }
 
-enterButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    revealSite({ scrollToFilms: button.hasAttribute('data-scroll-films') });
-    if (button.hasAttribute('data-enter-site')) {
-      toggleMusic();
-    }
-  });
+enterButton?.addEventListener('click', () => {
+  revealSite({ scrollToFilms: true });
+  toggleMusic();
 });
 
 musicToggle?.addEventListener('click', toggleMusic);
