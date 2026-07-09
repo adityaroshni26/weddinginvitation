@@ -1,8 +1,189 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aditya & Roshni | Wedding Memories</title><link rel="stylesheet" href="style.css"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet"></head><body><section id="intro"><video autoplay muted loop playsinline id="bg-video"><source src="intro.mp4" type="video/mp4"></video><div class="overlay"><div class="card"><h1>Aditya &amp; Roshni</h1><div class="line"></div><p class="lead">Two souls. One promise. A lifetime together.</p><p>Thank you for celebrating with us and making our wedding unforgettable.</p><button onclick="openInvite()">Relive Our Journey</button></div></div></section><div id="site"><section class="heroText"><h2>Our Wedding Films</h2><p>Every celebration. Every emotion. Every memory.</p></section><div class="grid">
-<article class="film-card"><a href="#" class="film-link" data-video="fRj4SQ_-WOQ"><img src="engagement.png"><div class="play">▶</div></a><div class="info"><h3>Engagement</h3><p>Where Forever Began</p></div></article>
-<article class="film-card"><a href="#" class="film-link" data-video="pRqP_y9ry08"><img src="ganesh.png"><div class="play">▶</div></a><div class="info"><h3>Ganesh Sthapna</h3><p>With Every Blessing</p></div></article>
-<article class="film-card"><a href="#" class="film-link" data-video="Z89HxGtfFvo"><img src="haldi.png"><div class="play">▶</div></a><div class="info"><h3>Haldi & Mehendi</h3><p>Colours of Celebration</p></div></article>
-<article class="film-card"><a href="#" class="film-link" data-video="DdrFLdWGabA"><img src="sangeet.png"><div class="play">▶</div></a><div class="info"><h3>Sangeet</h3><p>A Night of Music & Dance</p></div></article>
-<article class="film-card"><a href="#" class="film-link" data-video="YVUiMlx6-fU"><img src="baraat.png"><div class="play">▶</div></a><div class="info"><h3>Baraat</h3><p>The Celebration Arrives</p></div></article>
-<article class="film-card"><a href="#" class="film-link" data-video="s9tekDImw0s"><img src="wedding.png"><div class="play">▶</div></a><div class="info"><h3>Wedding Ceremony</h3><p>Our Forever Begins</p></div></article>
-</div><footer><h2>Thank You ❤️</h2><p>With love,<br>Aditya &amp; Roshni</p></footer></div><div id="videoModal"><div class="videoBox"><button id="close">✕</button><iframe id="frame" allowfullscreen></iframe></div></div><audio id="music" loop><source src="music.mp3"></audio><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aditya & Roshni | Wedding Memories</title>
+  <meta name="description" content="A cinematic wedding memories microsite for Aditya and Roshni — engagement, blessings, haldi, sangeet, baraat, and wedding films." />
+  <meta name="theme-color" content="#6f122d" />
+  <meta property="og:title" content="Aditya & Roshni | Wedding Memories" />
+  <meta property="og:description" content="Relive the celebrations, blessings, music, and wedding ceremony of Aditya and Roshni." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="engagement.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#memories">Skip to wedding films</a>
+
+  <section id="intro" class="intro" aria-label="Wedding memories introduction">
+    <video autoplay muted loop playsinline id="bg-video" aria-hidden="true" poster="engagement.png">
+      <source src="intro.mp4" type="video/mp4" />
+    </video>
+    <div class="intro__veil"></div>
+    <div class="intro__frame" aria-hidden="true"></div>
+
+    <div class="intro__content">
+      <p class="eyebrow">A wedding archive</p>
+      <h1>Aditya <span>&amp;</span> Roshni</h1>
+      <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+      <p class="lead">Two souls. One promise. A lifetime together.</p>
+      <p class="intro__copy">Thank you for celebrating with us and making every moment unforgettable.</p>
+      <div class="intro__actions">
+        <button class="primary-action" type="button" data-enter-site>Relive Our Journey</button>
+        <button class="ghost-action" type="button" data-scroll-films>View Films</button>
+      </div>
+    </div>
+  </section>
+
+  <main id="site" class="site" aria-live="polite">
+    <header class="site-header">
+      <a class="brand" href="#intro" aria-label="Aditya and Roshni wedding memories home">
+        <span>A</span><i>&amp;</i><span>R</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#memories">Films</a>
+        <a href="#timeline">Journey</a>
+        <a href="#thanks">Thanks</a>
+      </nav>
+      <button class="music-toggle" type="button" aria-pressed="false" data-music-toggle>
+        <span class="music-toggle__dot" aria-hidden="true"></span>
+        <span data-music-label>Music off</span>
+      </button>
+    </header>
+
+    <section class="hero-text" id="memories">
+      <p class="eyebrow">Wedding films</p>
+      <h2>Every celebration, blessing, dance, and promise — gathered in one place.</h2>
+      <p>Follow the story from the first ring to the sacred vows. Each film opens in a focused viewing space without leaving the page.</p>
+    </section>
+
+    <section class="film-grid" aria-label="Wedding film collection">
+      <article class="film-card film-card--feature" style="--accent:#8f1739">
+        <a href="https://www.youtube.com/watch?v=fRj4SQ_-WOQ" class="film-link" data-video="fRj4SQ_-WOQ" aria-label="Play Engagement film">
+          <picture>
+            <source srcset="engagement.webp" type="image/webp" />
+            <img src="engagement.png" alt="Aditya and Roshni engagement celebration" loading="eager" />
+          </picture>
+          <span class="play" aria-hidden="true">▶</span>
+        </a>
+        <div class="info">
+          <p class="film-kicker">Chapter 01</p>
+          <h3>Engagement</h3>
+          <p>Where forever began.</p>
+        </div>
+      </article>
+
+      <article class="film-card" style="--accent:#b57a1e">
+        <a href="https://www.youtube.com/watch?v=pRqP_y9ry08" class="film-link" data-video="pRqP_y9ry08" aria-label="Play Ganesh Sthapna film">
+          <picture>
+            <source srcset="ganesh.webp" type="image/webp" />
+            <img src="ganesh.png" alt="Ganesh Sthapna blessing ceremony" loading="lazy" />
+          </picture>
+          <span class="play" aria-hidden="true">▶</span>
+        </a>
+        <div class="info">
+          <p class="film-kicker">Chapter 02</p>
+          <h3>Ganesh Sthapna</h3>
+          <p>With every blessing.</p>
+        </div>
+      </article>
+
+      <article class="film-card" style="--accent:#d39a2b">
+        <a href="https://www.youtube.com/watch?v=Z89HxGtfFvo" class="film-link" data-video="Z89HxGtfFvo" aria-label="Play Haldi and Mehendi film">
+          <picture>
+            <source srcset="haldi.webp" type="image/webp" />
+            <img src="haldi.png" alt="Haldi and Mehendi celebration" loading="lazy" />
+          </picture>
+          <span class="play" aria-hidden="true">▶</span>
+        </a>
+        <div class="info">
+          <p class="film-kicker">Chapter 03</p>
+          <h3>Haldi &amp; Mehendi</h3>
+          <p>Colours of celebration.</p>
+        </div>
+      </article>
+
+      <article class="film-card" style="--accent:#7d2248">
+        <a href="https://www.youtube.com/watch?v=DdrFLdWGabA" class="film-link" data-video="DdrFLdWGabA" aria-label="Play Sangeet film">
+          <picture>
+            <source srcset="sangeet.webp" type="image/webp" />
+            <img src="sangeet.png" alt="Sangeet music and dance night" loading="lazy" />
+          </picture>
+          <span class="play" aria-hidden="true">▶</span>
+        </a>
+        <div class="info">
+          <p class="film-kicker">Chapter 04</p>
+          <h3>Sangeet</h3>
+          <p>A night of music and dance.</p>
+        </div>
+      </article>
+
+      <article class="film-card" style="--accent:#a44824">
+        <a href="https://www.youtube.com/watch?v=YVUiMlx6-fU" class="film-link" data-video="YVUiMlx6-fU" aria-label="Play Baraat film">
+          <picture>
+            <source srcset="baraat.webp" type="image/webp" />
+            <img src="baraat.png" alt="Baraat celebration arrives" loading="lazy" />
+          </picture>
+          <span class="play" aria-hidden="true">▶</span>
+        </a>
+        <div class="info">
+          <p class="film-kicker">Chapter 05</p>
+          <h3>Baraat</h3>
+          <p>The celebration arrives.</p>
+        </div>
+      </article>
+
+      <article class="film-card film-card--final" style="--accent:#6f122d">
+        <a href="https://www.youtube.com/watch?v=s9tekDImw0s" class="film-link" data-video="s9tekDImw0s" aria-label="Play Wedding Ceremony film">
+          <picture>
+            <source srcset="wedding.webp" type="image/webp" />
+            <img src="wedding.png" alt="Aditya and Roshni wedding ceremony" loading="lazy" />
+          </picture>
+          <span class="play" aria-hidden="true">▶</span>
+        </a>
+        <div class="info">
+          <p class="film-kicker">Chapter 06</p>
+          <h3>Wedding Ceremony</h3>
+          <p>Our forever begins.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="timeline" id="timeline" aria-label="Wedding journey timeline">
+      <div class="timeline__intro">
+        <p class="eyebrow">The journey</p>
+        <h2>Six chapters of one beautiful story.</h2>
+      </div>
+      <ol>
+        <li><span>01</span><strong>Engagement</strong><em>Where forever began</em></li>
+        <li><span>02</span><strong>Ganesh Sthapna</strong><em>With every blessing</em></li>
+        <li><span>03</span><strong>Haldi &amp; Mehendi</strong><em>Colours of celebration</em></li>
+        <li><span>04</span><strong>Sangeet</strong><em>A night of music and dance</em></li>
+        <li><span>05</span><strong>Baraat</strong><em>The celebration arrives</em></li>
+        <li><span>06</span><strong>Wedding Ceremony</strong><em>Our forever begins</em></li>
+      </ol>
+    </section>
+
+    <footer class="footer" id="thanks">
+      <p class="eyebrow">With gratitude</p>
+      <h2>Thank you for being part of our forever.</h2>
+      <p>With love,<br />Aditya &amp; Roshni</p>
+    </footer>
+  </main>
+
+  <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Wedding film player" hidden>
+    <div class="video-box">
+      <button id="close" class="close" type="button" aria-label="Close video">✕</button>
+      <iframe id="frame" title="Wedding film video player" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <audio id="music" loop preload="none">
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
+  <script src="script.js" defer></script>
+</body>
+</html>
